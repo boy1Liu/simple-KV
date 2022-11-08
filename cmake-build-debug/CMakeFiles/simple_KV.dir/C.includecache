@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/boy/CLionProjects/simple-KV/kv_interface.h
+
+/Users/boy/CLionProjects/simple-KV/line_parser.c
+string.h
+-
+stdio.h
+-
+kv_interface.h
+/Users/boy/CLionProjects/simple-KV/kv_interface.h
+line_parser.h
+/Users/boy/CLionProjects/simple-KV/line_parser.h
+
+/Users/boy/CLionProjects/simple-KV/line_parser.h
+

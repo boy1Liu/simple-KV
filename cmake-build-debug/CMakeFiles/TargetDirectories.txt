@@ -1,0 +1,3 @@
+/Users/boy/CLionProjects/simple-KV/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/boy/CLionProjects/simple-KV/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/boy/CLionProjects/simple-KV/cmake-build-debug/CMakeFiles/simple_KV.dir
