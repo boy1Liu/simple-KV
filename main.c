@@ -4,7 +4,7 @@
 #include "memory_manage.h"
 #include "hash.h"
 
-extern int MAX_WORD_LEN;
+#define MAX_WORD_LEN 1<<5
 extern table t;
 
 

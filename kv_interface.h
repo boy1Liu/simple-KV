@@ -8,5 +8,6 @@
 int kv_set(char* key, char* value);
 const char* kv_get(char *key);
 int check_input_len(char *input);
+int kv_remove(char *key);
 
 #endif //SIMPLE_KV_KV_INTERFACE_H

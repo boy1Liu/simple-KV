@@ -16,7 +16,6 @@ CMakeFiles/simple_KV.dir/line_parser.c.o: \
  ../line_parser.h
 CMakeFiles/simple_KV.dir/main.c.o: \
  ../hash.h \
- ../kv_interface.h \
  ../line_parser.h \
  ../main.c \
  ../memory_manage.h

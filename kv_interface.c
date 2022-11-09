@@ -6,13 +6,16 @@
 #include "memory_manage.h"
 #include "util.h"
 #include "kv_interface.h"
-#define MAX_INPUT_LEN (8 << 3)
+#define MAX_INPUT_LEN 1<<6
 
 extern table t;
 
 int kv_set(char* key, char* value) {
     TEST_NZ(check_input_len(key));
     TEST_NZ(check_input_len(value));
+
+    // TODO if reset the key, then free the past memory
+
     void * p = write_into_chunk(get_slab_index(value), value);
     printf("insert <key \"%s\" value 0x%x> into hash map\n", key, p);
     insert_entry(key, p);
@@ -28,6 +31,13 @@ const char* kv_get(char *key) {
     }
     printf("value of key %s is: %s\n", key, res);
     return res;
+}
+
+int kv_remove(char *key) {
+    TEST_NZ(check_input_len(key));
+    void * res = find_value_by_key(key);
+    free_key(key);
+    return remove_key(res);
 }
 
 int check_input_len(char *input) {

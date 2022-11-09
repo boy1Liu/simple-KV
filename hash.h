@@ -29,5 +29,6 @@ void free_hash_table();
 int key2index(const char* key);
 int insert_entry(char* key, char* value);
 const char* find_value_by_key(const char* key);
+void free_key(const char* key);
 
 #endif //SIMPLE_KV_HASH_H

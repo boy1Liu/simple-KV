@@ -27,14 +27,39 @@ void free_hash_table() {
         e = &(tt->bucket[i]);
         while(e->next != NULL) {
             e_nxt = e->next;
-            free(e->key);
-            free(e->value);
             free(e);
             e = e_nxt;
         }
-        free(e->key);
-        free(e->value);
         free(e);
+    }
+}
+
+void free_key(const char* key) {
+    table *tt = &t;
+    if(tt == NULL) {
+        return;
+    }
+    entry *e, *e_prev=NULL;
+
+    int idx = key2index(key);
+    e = &(tt->bucket[idx]);
+    while(e != NULL) {
+        if (strcmp(e->key, key) == 0) {
+            if (e_prev == NULL && e->next == NULL) {
+                e->key = NULL;
+                e->value = NULL;
+            } else {
+                if (e_prev != NULL) {
+                    e_prev->next = e->next;
+                } else if (e->next != NULL) {
+                    tt->bucket[idx] = *(e->next);
+                }
+                free(e);
+            }
+            return;
+        }
+        e_prev = e;
+        e = e->next;
     }
 }
 
